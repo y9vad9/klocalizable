@@ -19,3 +19,4 @@ rootProject.name = "klocalizable"
 
 includeBuild("buildUtils/dependencies")
 includeBuild("buildUtils/configuration")
+includeBuild("buildUtils/deploy")
