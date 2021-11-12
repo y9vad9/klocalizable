@@ -13,6 +13,7 @@ object Strings {
     }
 }
 ```
+### Word forms support
 If you need to make different forms of words / sentences you can make next:
 ```kotlin
 object Strings {
