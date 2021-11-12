@@ -3,7 +3,7 @@ package com.y9vad9.localizable
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
-public class KLocalizedDelegate<T>(private val localized: KLocalized<T>, private val provider: CurrentLocalizationProvider) : ReadOnlyProperty<Any?, T> {
+public class KLocalizedDelegate<T>(private val localized: KLocalized<T>, private val provider: CurrentLocaleProvider) : ReadOnlyProperty<Any?, T> {
     override fun getValue(thisRef: Any?, property: KProperty<*>): T {
         val currentLocale = provider.provide()
         return chooseVariant(currentLocale)

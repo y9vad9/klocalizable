@@ -1,7 +1,7 @@
 package com.y9vad9.localizable
 
 public fun <T> localized(
-    localizationProvider: CurrentLocalizationProvider,
+    localizationProvider: CurrentLocaleProvider,
     builder: KLocalizationBuilder<T>.() -> Unit
 ): KLocalizedDelegate<T> {
     return KLocalizedDelegate(klocalized(builder), localizationProvider)
@@ -9,7 +9,7 @@ public fun <T> localized(
 
 public fun <T> localized(
     default: T,
-    localizationProvider: CurrentLocalizationProvider,
+    localizationProvider: CurrentLocaleProvider,
     builder: KLocalizationBuilder<T>.() -> Unit
 ) : KLocalizedDelegate<T> = localized(localizationProvider) {
     Locale.DEFAULT provides default
