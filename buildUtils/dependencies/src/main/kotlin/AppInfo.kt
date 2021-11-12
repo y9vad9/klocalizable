@@ -1,4 +1,4 @@
 object AppInfo {
-    const val PACKAGE = "fun.kotlingang.template"
-    const val VERSION = "1.0"
+    const val PACKAGE = "com.y9vad9"
+    const val VERSION = "1.0.0"
 }

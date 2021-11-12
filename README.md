@@ -1,10 +1,25 @@
-# kotlin-project-template
-Project Template for convenient project setup.
+# klocalizable
+Simple Kotlin localization library.
 
-## Motivation
-Every time I create a new project, I do a lot of routine work, so this repo should decrease amount of this work.
+## Example
+```kotlin
+object Strings {
+    val helloWorld: String by localized(
+        default = "Hello, World!", localeProvider
+    ) {
+        Locale.RUSSIAN provides "Привет, мир!"
+        Locale.UKRAINIAN provides "Привіт, світ"
+    }
+}
+```
 
-## Initializing
-- `setting.gradle.kts`: Set your root project name
-- `buildUtils/dependencies/AppInfo.kt`: Set your package
-- `build.gradle.kts`: Setup your root build.gradle.kts with configurations
+## Implementation
+Put next in your gradle:
+```kotlin
+repositories {
+    maven("https://maven.y9vad9.com")
+}
+dependencies {
+    implementation("com.y9vad9.localizable")
+}
+```

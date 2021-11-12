@@ -1,12 +1,21 @@
 plugins {
-    id(Deps.Plugins.Configuration.Kotlin.Jvm)
+    id(Deps.Plugins.Configuration.Kotlin.Mpp)
 }
 
 group = AppInfo.PACKAGE
 version = AppInfo.VERSION
 
-allprojects {
-    repositories {
-        mavenCentral()
+kotlin {
+    jvm()
+    js {
+        browser()
+        nodejs()
+    }
+
+    sourceSets {
+        all {
+            languageSettings.optIn("kotlin.OptIn")
+            explicitApi()
+        }
     }
 }
